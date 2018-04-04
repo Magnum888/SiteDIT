@@ -1,7 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const devserver = require('./webpack/devserver');
+const sass = require('./webpack/sass');
+const css = require('./webpack/css');
+const extractCSS = require('./webpack/css-extract');
 
 const PATHS = {
     src: path.join(__dirname, 'src'),
@@ -9,15 +13,24 @@ const PATHS = {
 };
 
 const common = {
-  entry: PATHS.src + '/app.js',
+  entry: {
+    'index': PATHS.src + '/app.js',
+  },
   output: {
     path: PATHS.dist,
-    filename: '[name].js'
+    filename: 'js/[name].js'
   },
+  
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       title: 'Webpack app',
       template: './src/test.html'
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      Popper: ['popper.js', 'default']
     })
   ]
 };
@@ -33,14 +46,17 @@ module.exports = function(env){
   if(env === 'production'){
     return merge([
       common,
-      productionConfig
+      productionConfig,
+      extractCSS()
     ])
   }
   if(env === 'development'){
     return merge([
       common,
       developmentConfig,
-      devserver()
+      devserver(),
+      sass(),
+      css()
     ])
   }
 };
