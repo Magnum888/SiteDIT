@@ -7,6 +7,7 @@ const sass = require('./webpack/sass');
 const css = require('./webpack/css');
 const extractCSS = require('./webpack/css-extract');
 const uglifyJS = require('./webpack/js-uglify');
+const images = require('./webpack/file-loader');
 
 const PATHS = {
     src: path.join(__dirname, 'src'),
@@ -14,26 +15,27 @@ const PATHS = {
 };
 
 const common = {
-  entry: {
-    'index': PATHS.src + '/app.js',
-  },
-  output: {
-    path: PATHS.dist,
-    filename: 'js/[name].js'
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      title: 'Webpack app',
-      template: './src/test.html'
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      Popper: ['popper.js', 'default']
-    })
-  ]
+    entry: {
+      'index': PATHS.src + '/app.js',
+    },
+    output: {
+      path: PATHS.dist,
+      filename: 'js/[name].js'
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        title: 'Webpack app',
+        template: './src/test.html'
+      }),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        Popper: ['popper.js', 'default']
+      })
+    ]
 };
+
 const productionConfig = {
   mode: 'production'
 };
@@ -48,7 +50,8 @@ module.exports = function(env){
       common,
       productionConfig,
       extractCSS(),
-      uglifyJS()
+      uglifyJS(),
+      images()
     ])
   }
   if(env === 'development'){
@@ -57,7 +60,8 @@ module.exports = function(env){
       developmentConfig,
       devserver(),
       sass(),
-      css()
+      css(),
+      images()
     ])
   }
 };

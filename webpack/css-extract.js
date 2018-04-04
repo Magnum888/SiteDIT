@@ -13,7 +13,7 @@ module.exports = function(paths){
                     use: extractSASS.extract({
                         publicPath: '../',
                         fallback: "style-loader",
-                        use: ['css-loader','sass-loader']
+                        use: ['css-loader?url=false','sass-loader']
                     })
                 },
                 {
@@ -22,7 +22,7 @@ module.exports = function(paths){
                     use: extractCSS.extract({
                         publicPath: '../',
                         fallback: "style-loader",
-                        use: ['css-loader']
+                        use: ['css-loader?url=false']
                     })
               }
             ]
