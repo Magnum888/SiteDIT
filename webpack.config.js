@@ -6,6 +6,7 @@ const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
 const css = require('./webpack/css');
 const extractCSS = require('./webpack/css-extract');
+const uglifyJS = require('./webpack/js-uglify');
 
 const PATHS = {
     src: path.join(__dirname, 'src'),
@@ -20,7 +21,6 @@ const common = {
     path: PATHS.dist,
     filename: 'js/[name].js'
   },
-  
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -47,7 +47,8 @@ module.exports = function(env){
     return merge([
       common,
       productionConfig,
-      extractCSS()
+      extractCSS(),
+      uglifyJS()
     ])
   }
   if(env === 'development'){
