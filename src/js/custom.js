@@ -3,4 +3,6 @@ window.Popper = require('popper.js');
 // $(function (){
 //     $('[data-toggle="popover"]').popover()
 // })
-import img from '../images/menu.svg'
+$(".slider").slick();
+import '../images/images/menu.svg';
+import '../images/images/header.png';

@@ -1,6 +1,349 @@
-h1
-    color: green;
-.menu
-    width: 50px;
-    height: 50px;
-    background: url('../images/images/menu.svg') no-repeat;
+@import "vars"
+@import 'fonts'
+@import "./_mixins/clearfix"
+@import '~bootstrap/scss/_functions'
+@import '~bootstrap/scss/_variables'
+@import '~bootstrap/scss/mixins/_breakpoints'
+@import '~bootstrap/scss/utilities/_sizing'
+@import "~bootstrap/scss/bootstrap-reboot"
+@import "~bootstrap/scss/bootstrap-grid"
+
+$black: #000000
+$white: #ffffff
+$font-size: 14px
+$bold: 700
+$regular: 400
+$light: 300
+$thin: 200
+$line-height: 1.4
+$font-color: #f2f2f2
+// $button: .block__button-title.collapsed
+
+body
+    color: $black
+    font: $bold $font-size/$line-height roboto-fonts, Arial, sans-serif
+    background: $font-color
+
+%padding-1
+    padding-left: 1px
+    padding-right: 1px
+    padding-top: 1px
+    padding-bottom: 1px
+    
+.header
+    height: 554px
+    background: url('../images/images/header.png') no-repeat
+    background-size: cover
+    .container-fluid
+        padding: 0
+    .row
+        margin-right: 0
+        margin-left: 0
+    &__shadow
+        background: url('../images/images/opacity.png') center
+        height: 486px
+        background-size: cover
+        opacity: 0.75
+
+.head
+    background: url('../images/images/head1.png') repeat-x center
+    background-size: contain
+    &__logo
+        padding: 0
+        margin-right: 5vw
+        &__text
+            font-weight: $thin
+            line-height: 30px
+            text-transform: uppercase
+            font-size: 23px
+            color: $white
+            font-family: roboto-fonts
+            padding: 19px 19px 19px 19px
+            margin: 0
+    &__search_block
+        padding: 0
+    .search
+        display: flex
+        position: relative
+        &__input
+            width: 100%
+            max-width: 845px
+            min-width: 172px
+            height: 38px
+            padding-left: 60px
+            padding-right: 40px
+            font-size: 18px
+        &__point
+            background: url('../images/images/point.png') no-repeat
+            width: 14px
+            height: 20px
+            position: absolute
+            left: 15px;
+        &__select
+            position: absolute
+            width: 10px
+            height: 6px
+            background: url('../images/images/down.png') no-repeat
+            left: 40px
+            @extend %padding-1
+            border: 0
+        &__submit
+            position: absolute
+            border: 0
+            right: 72px
+            width: 14px
+            height: 14px
+            background: url('../images/images/search.png') no-repeat
+    &__avatar_block
+        padding: 0
+    .avatar
+        position: relative
+        &__bell
+            background: url('../images/images/bell-black.svg') center no-repeat
+            background-size: cover
+            width: 22px
+            height: 22px
+            @extend %padding-1
+        &__img
+            margin-right: 38px
+            margin-left: 32px
+            cursor: pointer
+        &__number
+            height: 18px
+            width: 16px
+            background-color: #ff0000
+            border-radius: 6px
+            position: absolute
+            left: 16px
+            bottom: 16px
+            color: $white
+            font-size: 12px
+            text-align: center
+
+.main-cont
+    position: relative
+    .content
+        position: absolute
+        top: -220px
+        
+.info
+    .row
+        margin: 12px 0 0 0
+    &__leaf
+        background: url('../images/images/leaf.png') center no-repeat
+        background-size: cover
+        width: 32px
+        height: 32px
+        margin-left: 53px
+        margin-right: 23px
+    &__title
+        font-family: roboto-fonts
+        font-size: 40px
+        font-weight: $bold
+        line-height: 25.87px
+        color: $white
+        margin: 0
+    &__undertitle
+        font-family: roboto-fonts
+        font-size: 14px
+        font-weight: $bold
+        line-height: 25.87px
+        color: $white
+        margin: 0
+        margin-bottom: 49px
+        margin-left: 111px
+
+.block
+    margin-bottom: 20px
+    -webkit-box-shadow: 0px 3px 6px 1px rgba(138,138,138,0.29)
+    -moz-box-shadow: 0px 3px 6px 1px rgba(138,138,138,0.29)
+    box-shadow: 0px 3px 6px 1px rgba(138,138,138,0.29)
+    border: 0
+    max-width: 751px
+    .card-body
+        padding: 0
+    .card-header
+        padding: 0
+        border-bottom: 0
+    &__title
+        border-radius: 1px
+        // border: 1px solid #dddddd
+        max-width: 751px
+        height: 109px
+        background-color: $white
+        .row
+            margin: 0
+            padding-left: 52px
+            padding-right: 46px
+            padding-top: 38px
+            padding-bottom: 38px
+    &__img-title
+        background: url('../images/images/heat.png') center no-repeat
+        background-size: cover
+        width: 32px
+        height: 33px
+    &__text-title
+        color: $black
+        font-family: roboto-fonts
+        font-size: 24px
+        font-weight: $bold
+        line-height: 26.35px
+        padding-right: 156px
+        padding-left: 25px
+        margin: 0
+    &__button-title
+        width: 16px
+        height: 11px
+        background-size: cover
+        border: 0
+        cursor: pointer
+    &__button-title
+        &[aria-expanded="true"]
+            background: url('../images/images/arrow-up.png') center no-repeat
+            outline: none
+        &[aria-expanded="false"]
+            background: url('../images/images/arrow.png') center no-repeat
+            outline: none
+    &__body
+        max-width: 751px
+        padding-left: 107px
+        padding-right: 89px
+        padding-bottom: 94px
+        color: $black
+        font-family: roboto-fonts
+        font-size: 14px
+        font-weight: $bold
+        line-height: 24px
+
+.course
+    padding: 0
+    &__head
+        &__title
+            font-family: roboto-fonts
+            font-size: 40px
+            font-weight: $bold
+            // line-height: 25.87px
+            color: $white
+            margin: 0
+        &__undertitle
+            font-family: roboto-fonts
+            font-size: 14px
+            font-weight: $bold
+            // line-height: 25.87px
+            color: $white
+            margin: 0
+            margin-bottom: 49px
+    &__main
+        width: 252px
+        height: 432px
+        padding: 6px
+        &__body
+            width: 240px
+            height: 420px
+            border-radius: 1px
+            background-color: $white
+            padding-left: 12px
+            padding-right: 12px
+            -webkit-box-shadow: 0px 0px 6px 1px rgba(138,138,138,0.29)
+            -moz-box-shadow: 0px 0px 6px 1px rgba(138,138,138,0.29)
+            box-shadow: 0px 0px 6px 1px rgba(138,138,138,0.29)
+            &__title
+                margin: 0
+                position: relative
+                .star-head-course
+                    background: url('../images/images/star.png') center no-repeat
+                    // background-size: cover
+                    width: 24px
+                    height: 22px
+                    position: absolute
+                    right: 23px
+                    top: 13px
+                .img-head-course
+                    width: 84px
+                    height: 83px
+                    border-radius: 2px
+                    -webkit-box-shadow: 0px 0px 14px 1px rgba(138,138,138,0.42)
+                    -moz-box-shadow: 0px 0px 14px 1px rgba(138,138,138,0.42)
+                    box-shadow: 0px 0px 14px 1px rgba(138,138,138,0.42)
+                    position: absolute
+                    top: -15px
+                    left: 22px
+                    // z-index: 999
+                    background-color: white
+                    &-logo
+                        background: url('../images/images/logo2.png') center no-repeat
+                        width: 59px
+                        height: 55px
+                        margin: 14px 12px
+            &__photo
+                background: url('../images/images/class.png') center no-repeat
+                width: 216px
+                height: 149px
+                margin-top: 51px
+                -webkit-box-shadow: 0px 15px 22px -4px rgba(0,0,0,0.42)
+                -moz-box-shadow: 0px 15px 22px -4px rgba(0,0,0,0.42)
+                box-shadow: 0px 15px 22px -4px rgba(0,0,0,0.42)
+            &__school
+                .check-school
+                    background: url('../images/images/check.png') center no-repeat
+                    width: 23px
+                    height: 23px
+                    margin-left: 21px
+                    margin-top: 20px
+                .name-chool
+                    color: $black
+                    font-family: roboto-fonts
+                    font-size: 18px
+                    font-weight: $bold
+                    line-height: 24px
+                    margin-left: 11px
+                    margin-top: 25px
+                    margin-bottom: 19px
+            &__text
+                margin-bottom: 22px
+                padding-left: 11px
+                padding-right: 12px
+                height: 40px
+                opacity: 0.8
+                color: $black
+                font-family: roboto-fonts
+                font-size: 14px
+                font-weight: $bold
+                line-height: 21px
+                text-overflow: ellipsis
+                overflow: hidden
+            hr
+                margin: 0
+            &__location
+                .location-point
+                    background: url('../images/images/location-point.png') center no-repeat
+                    width: 14px
+                    height: 21px
+                    opacity: 0.5
+                    margin-left: 26px
+                    margin-top: 15px
+                    margin-right: 13px
+                .location-name
+                    margin-top: 15px
+                    .location-country, .location-town
+                        opacity: 0.7
+                        color: $black
+                        font-family: roboto-fonts
+                        font-size: 14px
+                        font-weight: $bold
+                        // line-height: 23px
+.all-title-course
+    color: $black
+    font-family: roboto-fonts
+    font-size: 28px
+    font-weight: $bold
+    line-height: 30px
+    padding-left: 28px
+    margin-bottom: 20px
+
+
+            
+    
+
+
+@import 'media'
