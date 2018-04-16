@@ -8,13 +8,227 @@
 
 // ≥992px
 +media-breakpoint-down(md)
+    .container
+        margin: 0
+    .header
+        height: 903px
+        &__shadow
+            height: 847px
+    .head__logo
+        margin-right: 0
+        &__text
+            display: none
+        &__text__mobile
+            display: block
+            font-weight: $thin
+            line-height: 30px
+            text-transform: uppercase
+            font-size: 23px
+            color: $white
+            margin-right: 19px
+            margin-bottom: 0px
+    
+    .head
+        .search__submit
+            right: 0.5vw
+        .search__input
+            width: 100%
+            max-width: 845px
+            min-width: 172px
+            height: 31px
+            padding-left: 60px
+            padding-right: 40px
+            margin-top: 11px
+            margin-bottom: 14px
+            font-size: 18px
+            border: none
+        .avatar__img
+            margin-right: 9px
+            margin-left: 15px
+        .avatar__number
+            display: none
+        .avatar__bell
+            background: url(../images/images/bell-white.svg) center no-repeat
+            background-size: cover
+
+    .main-cont .content
+        top: -805px
+
+    .info__undertitle
+        display: none
+    .info__leaf
+        margin-top: 81px
+        margin-bottom: 30px
+        margin-left: auto
+        margin-right: auto
+    .info__title
+        margin-bottom: 56px
+        font-size: 26px
+        text-align: center
+        padding: 0
+
+    .course__head
+        display: none
+    .course__main
+        margin-left: auto
+        margin-right: auto
+        width: 303px
+        height: 439px
+        &__body
+            width: 303px
+            height: 460px
+            &__title .star-head-course
+                right: 4px
+        &__photo
+            width: 276px
+            height: 190px
+            background-size: cover
+
+    .cust-slider
+        max-width: 700px
+    button.slick-next.slick-arrow
+        display: none !important
+    button.slick-prev.slick-arrow
+        display: none !important
+    
+    .block
+        max-width: 306px
+        margin-left: auto
+        margin-right: auto
+        &__img-title
+            margin-left: auto
+            margin-right: auto
+            margin-top: 58px
+            margin-bottom: 22px
+        &__text-title
+            width: 194px
+            margin-left: auto
+            margin-right: auto
+            font-size: 22px
+            padding: 0
+        &__button-title
+            display: none
+        &__body
+            padding-left: 19px
+            padding-right: 25px
+            font-size: 16px
+    .card-header.block__title
+        height: 222px
+    .card-header.block__title .row
+        display: block
+        padding: 0
+    .all-title-course
+        line-height: 23px
+        font-size: 16px
+
+    .block-slider
+        .star-head-course
+            display: none
+        .img-head-course
+            top: 6px
+            width: 37px
+            height: 36px
+            .img-head-course-logo
+                width: 26px
+                height: 24px
+                margin: 6px
+                background-size: cover
+        .course__main
+            // width: auto
+            width: 144px
+            height: auto
+        .course__main__body
+            padding: 0
+            width: auto
+            height: auto
+            // height: 166px
+        .course__main__body__photo
+            margin-top: 0
+            width: 132px
+            height: 92px
+            box-shadow: none
+            .prise-head-course
+                // display: block
+                // position: absolute
+                width: 75px
+                height: 26px
+                background-color: $black
+                opacity: 0.52
+                padding-top: 5px
+                .price-value
+                    opacity: 0.86
+                    color: $white
+                    font-family: roboto-fonts
+                    font-size: 12px
+                    font-weight: $bold
+        .course__main__body__school
+            display: none
+        .course__main__body__text
+            display: none
+        .course__main__body__text2
+            display: block
+            opacity: 0.86
+            color: $black
+            font-family: roboto-fonts
+            font-size: 12px
+            font-weight: $bold
+            margin: 11px
+            margin-bottom: 0
+        .hr-slider
+            display: none
+        .course__main__body__location
+            padding-bottom: 14px
+        .location-name
+            margin-top: 25px
+            .location-country, .location-town
+                display: inline-block
+                font-size: 9px
+                opacity: 0.5
+                font-weight: $bold
+            .location-country::after
+                content: ','
 
 // ≥768px
 +media-breakpoint-down(sm)
-
+    .cust-slider
+        max-width: 600px
 // ≥576px
 +media-breakpoint-down(xs)
-
+    .content
+        left: 0.5px
+    .content .row
+        margin: 0
+    .cust-slider
+        max-width: 320px
+    .course
+        .course__main
+            height: auto
+            margin-left: auto
+            margin-right: auto
+    .info
+        padding-left: 7px
+        padding-right: 7px
+        .card.block
+                margin-left: auto
+                margin-right: auto
+    .cust-slider
+        // margin: 0
+        margin-left: auto
+        margin-right: auto
+    .head__logo__text__mobile
+        margin-right: 5px
+        margin-left: 5px
+    .head__avatar_block .avatar .avatar__img
+        margin-right: 5px
+        margin-left: 5px
+    .head__search_block
+        .search
+            &__point
+                left: 9px
+            &__select
+                left: 32px
+            &__input
+                padding-left: 48px
 
 /*==========  Mobile First  ==========*/
 
@@ -26,6 +240,6 @@
 
 // ≤992px
 +media-breakpoint-up(lg)
-
+    
 // ≤1200px
 +media-breakpoint-up(xl)

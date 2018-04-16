@@ -60,6 +60,8 @@ body
             font-family: roboto-fonts
             padding: 19px 19px 19px 19px
             margin: 0
+            &__mobile
+                display: none
     &__search_block
         padding: 0
     .search
@@ -73,6 +75,7 @@ body
             padding-left: 60px
             padding-right: 40px
             font-size: 18px
+            border: none
         &__point
             background: url('../images/images/point.png') no-repeat
             width: 14px
@@ -132,11 +135,13 @@ body
     &__leaf
         background: url('../images/images/leaf.png') center no-repeat
         background-size: cover
+        // display: inline-block
         width: 32px
         height: 32px
         margin-left: 53px
         margin-right: 23px
     &__title
+        // display: inline-block
         font-family: roboto-fonts
         font-size: 40px
         font-weight: $bold
@@ -256,7 +261,7 @@ body
                     width: 24px
                     height: 22px
                     position: absolute
-                    right: 23px
+                    right: 11px
                     top: 13px
                 .img-head-course
                     width: 84px
@@ -267,7 +272,7 @@ body
                     box-shadow: 0px 0px 14px 1px rgba(138,138,138,0.42)
                     position: absolute
                     top: -15px
-                    left: 22px
+                    left: 10px
                     // z-index: 999
                     background-color: white
                     &-logo
@@ -283,6 +288,8 @@ body
                 -webkit-box-shadow: 0px 15px 22px -4px rgba(0,0,0,0.42)
                 -moz-box-shadow: 0px 15px 22px -4px rgba(0,0,0,0.42)
                 box-shadow: 0px 15px 22px -4px rgba(0,0,0,0.42)
+                .price-head-course
+                    display: none
             &__school
                 .check-school
                     background: url('../images/images/check.png') center no-repeat
@@ -312,6 +319,8 @@ body
                 line-height: 21px
                 text-overflow: ellipsis
                 overflow: hidden
+            &__text2
+                display: none
             hr
                 margin: 0
             &__location
